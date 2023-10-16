@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tushita Example</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body><h1>Howzzzz that</h1>
+    <div class="blog-post">
+        <h2>Blog Post Title 1</h2>
+        <p>This is the content of the first blog post.</p>
+    </div>
+    <div class="blog-post">
+        <h2>Blog Post Title 2</h2>
+        <p>This is the content of the second blog post.</p>
+    </div>
+    <h2>Login form </h2>
+    <form>
+        <div class="form-group">
+            <label for="textbox">User Name:</label>
+            <input type="text" class="custom-textbox form-control" id="UserName" name="textbox" required>
+        </div>
+        <div class="form-group">
+            <label for="textbox">Password:</label>
+            <input type="text" class="custom-textbox form-control" id="Password" name="textbox" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dropdown">Select an Option:</label>
+            <select class="form-control" id="dropdown" name="dropdown">
+                <option value="Love">Love</option>
+                <option value="Life">Life</option>
+                <option value="Food">Food</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="displayText()">Submit</button>
+    </form>
+    <div id="textDisplay"></div>
+
+    <img id="gifImage" src="/static/Gif1.gif" alt="GIF Image">
+    
+    <script>
+        function displayText() {
+            var text = document.getElementById("UserName").value;
+            var text2 = document.getElementById("Password").value;
+            var dropdown = document.getElementById("dropdown");
+            var selectedOption = dropdown.options[dropdown.selectedIndex].text;
+            document.getElementById("textDisplay").innerHTML = "You entered: " + text + "<br>" + text2 + "<br>" + selectedOption;
+            var gifArray = [
+            "/static/Gif1.gif",
+            "/static/Gif2.gif",
+            "/static/Gif3.gif",
+            "/static/Gif4.gif",
+            "/static/Gif5.gif",
+            "/static/Gif6.gif",
+            "/static/Gif7.gif"
+
+
+        ];
+        var currentGifIndex = 0;
+        var gifImage = document.getElementById("gifImage");
+
+        function changeGif() {
+            currentGifIndex = (currentGifIndex + 1) % gifArray.length;
+            gifImage.src = gifArray[currentGifIndex];
+        }
+        // Call changeGif every 5 seconds (5000 milliseconds)
+        setInterval(changeGif, 5000);
+
+             // Change the image on submit
+             //var image = document.getElementById("myImage");
+            //image.src = "/static/IMG_0886.jpg";
+            //image.alt = "Replacement Image";
+        }
+    </script>
+</body>
+</html>
+

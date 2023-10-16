@@ -1,0 +1,15 @@
+/* styles.css */
+.myImage {
+    width: 200px; /* Set the desired width */
+    height: auto; /* Automatically adjust the height to maintain the image's aspect ratio */
+}
+
+
+/* styles.css */
+.custom-textbox {
+    background-color: #916191;
+    border: 1px solid #d15a91;
+    padding: 5px;
+    /* Add more custom styles as needed */
+}
+
